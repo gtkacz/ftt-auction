@@ -33,7 +33,7 @@ class Players
         $db->update('ID = ' . $this->ID, [
             "BID_WINNER" => $this->BID_WINNER,
             "BID_VALUE" => $this->BID_VALUE,
-            "BID_START_DATE" => $this->BID_START_DATE,
+            "BID_YEARS" => $this->BID_YEARS,
         ]);
 
         return true;

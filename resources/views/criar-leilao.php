@@ -31,25 +31,25 @@ foreach ($allPlayers as $row) {
         <hr>
         <div class=preview>
         <div class="div-preview">
-            <img id="preview" src="https://raw.githubusercontent.com/gtkacz/nba-headshot-api/main/img/unknown-1.png" alt="">
+            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $row->NBA_ID . '.png' ?>" alt="">
         </div>
         <div class="form">
-            <input type="hidden" value="The Meme Team" name="user-team">
+            <input type="hidden" value="The Meme Team" name="user_team">
             <div class="form-item">
-                <label for="player_id">Selecione o jogador que você quer bidar:</label>
-                <select id="player_id" name="player_id" class="div-toggle" onChange="update_image()">
+                <label for="player_name">Selecione o jogador que você quer bidar:</label>
+                <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
                     <?= $results ?>
                 </select>
                 <a id="player_stats" target="_blank" href="<?= 'https://www.nba.com/stats/player/' . $row->NBA_ID?>"><small>Estatísticas</small></a><br>
             </div>
             <div class="form-item">
-                <label for="Price">Escolha seu bid inicial:</label>
+                <label for="Price">Dê seu bid inicial:</label>
 
                 <div>
                 <!-- <span>$</span> -->
                 <input type="number" min="3.5" max="30" value="3.5"
                         oninput="validity.valid||(value='');" step="0.5" id="price" name="bid_value"
-                        placeholder="Escolha seu bid inicial"
+                        placeholder="Dê seu bid inicial"
                         oninvalid="this.setCustomValidity('Please, submit required data')"
                         oninput="this.setCustomValidity('')" required><span> milhões</span>
                 </div>
@@ -57,7 +57,7 @@ foreach ($allPlayers as $row) {
                 <!-- <span>por</span> -->
                 <input id="bid_form" type="number" onChange="update();" min="1" max="3" value="1"
                         oninput="validity.valid||(value='');" step="1" id="price" name="bid_years"
-                        placeholder="Escolha seu bid inicial"
+                        placeholder="Dê seu bid inicial"
                         oninvalid="this.setCustomValidity('Please, submit required data')"
                         oninput="this.setCustomValidity('')" required><span> anos</span></div><br>
             </div>

@@ -22,8 +22,8 @@ foreach ($allPlayers as $row) {
         </a>
         <b>' . $row->NAME . '</b>
         <span>' . $row->getPosition() . '</span>
-        <span>' . $row->PLAYER_TYPE . '</span>
         <em>$ ' . number_format($row->BID_VALUE) . '</em>
+        <em>' . $row->BID_YEARS . ' anos</em>
         <em> Maior bid: ' . $row->BID_WINNER . '</em>
         </div>
         <script language="JavaScript">
