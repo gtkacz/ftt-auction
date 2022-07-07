@@ -10,7 +10,9 @@ $allPlayers = Players::getPlayers();
 $results = "";
 
 foreach ($allPlayers as $row) {
-    $results .= '<option value="' . $row->NBA_ID . '">' . $row->NAME . '</option>';
+    if($row->BID_VALUE == ''){
+        $results .= '<option value="' . $row->NBA_ID . '">' . $row->NAME . '</option>';
+    }
 }
 
 ?>
