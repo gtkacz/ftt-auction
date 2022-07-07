@@ -12,6 +12,10 @@ $(document).on('change', '.div-toggle', function() {
 $(document).ready(function() {
     $('.div-toggle').trigger('change');
     document.getElementById('bid_value').value = 'new value';
+
+    $('input[type=text]').on('change', function() {
+        updateTextView($(this));
+    });
 });
 
 $(function() {
@@ -19,35 +23,11 @@ $(function() {
     // $().animate();
 });
 
-function update(source, target) {
-    var update_text = document.getElementById(source).value;
+function update() {
+    var update_text = document.getElementById("bid_form").value;
 
-    if (update_text == "") {
-        document.getElementById(target).textContent = "Placeholder";
-        document.getElementById(target).style.color = "gray";
-    } else {
-        switch (source) {
-            case "price":
-                update_text = "Price: " + update_text + " $";
-                break;
-            case "size":
-                update_text = "Size: " + update_text + " MB";
-                break;
-            case "weight":
-                update_text = "Weight: " + update_text + " KG";
-                break;
-            case "width":
-            case "length":
-            case "height":
-                var text1 = document.getElementById("height").value;
-                var text2 = document.getElementById("width").value;
-                var text3 = document.getElementById("length").value;
-                update_text = "Dimension: " + text1 + "x" + text2 + "x" + text3;
-                break;
-        }
-        document.getElementById(target).textContent = update_text;
-        document.getElementById(target).style.color = "black";
-    }
+    document.getElementById("bid_form").value = update_text.toLocaleString();
+
 }
 
 function check_active() {
@@ -59,4 +39,30 @@ function check_active() {
     } else {
         activebtn.disabled = 1;
     }
+}
+
+function updateTextView(_obj) {
+    var num = getNumber(_obj.val());
+    if (num == 0) {
+        _obj.val('');
+    } else {
+        _obj.val(num.toLocaleString());
+    }
+}
+
+function getNumber(_str) {
+    var arr = _str.split('');
+    var out = new Array();
+    for (var cnt = 0; cnt < arr.length; cnt++) {
+        if (isNaN(arr[cnt]) == false) {
+            out.push(arr[cnt]);
+        }
+    }
+    return Number(out.join(''));
+}
+
+function update_image() {
+    var player_id = document.getElementById("player_name").value;
+    var img_src = 'https://cdn.nba.com/headshots/nba/latest/1040x760/' + player_id + '.png';
+    document.getElementById("preview").src = img_src;
 }

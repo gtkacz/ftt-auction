@@ -5,11 +5,11 @@ include("resources/views/partials/head.php");
 
 use App\models\Players;
 
-$allProducts = Players::getPlayers();
+$allPlayers = Players::getPlayers();
 
 $results = "";
 
-foreach ($allProducts as $row) {
+foreach ($allPlayers as $row) {
     $end_date_raw = $row->BID_START_DATE;
     $end_date_raw = date('Y-m-d h:i:s', strtotime($end_date_raw. ' + 1 days'));
     $end_date = str_replace(" ", "T", $end_date_raw);
@@ -19,10 +19,10 @@ foreach ($allProducts as $row) {
 						<a href="resources/views/edit-product?ID=' . $row->getSlug("ID") . '">
 							<span class="edit-content">+</span>
                         </a>
-						<span>' . $row->NAME . '</span>
+						<b>' . $row->NAME . '</b>
 						<span>' . $row->getPosition() . '</span>
 						<span>' . $row->PLAYER_TYPE . '</span>
-						<span>$ ' . number_format($row->BID_VALUE) . '</span>
+						<em>$ ' . number_format($row->BID_VALUE) . '</em>
 						<em> Maior bid: ' . $row->BID_WINNER . '</em>
 					</div>
                     <script language="JavaScript">
@@ -44,7 +44,7 @@ foreach ($allProducts as $row) {
         <div class="title">
             <h2>Leilões ativos</h2>
             <div>
-                <button type="button" class="btn btn-success btn-size" onclick="window.location.href='resources/views/add-product'">
+                <button type="button" class="btn btn-success btn-size" onclick="window.location.href='resources/views/criar-leilao'">
                     Criar leilão
                 </button>
                 <!-- <button type="submit" class="btn btn-danger btn-size" value="delete" name="but_delete"

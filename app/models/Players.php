@@ -18,7 +18,6 @@ class Players
     {
         $db = new Database("players");
         $db->insert([
-            "ID" => $this->ID,
             "Name" => $this->Name,
             "Price" => $this->Price,
             "productType" => $this->productType,

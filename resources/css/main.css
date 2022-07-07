@@ -245,7 +245,7 @@ img:hover {
 }
 
 .div-preview {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +253,11 @@ img:hover {
     justify-content: center;
     min-width: 80ch;
     right: 0;
-    margin-right: 18ch;
+    /* margin-right: 18ch; */
+}
+
+.div-preview img {
+    height: 20ch;
 }
 
 .div-leilao {
