@@ -27,15 +27,13 @@ class Players
         return true;
     }
 
-    public function edit($oldID)
+    public function edit()
     {
         $db = new Database("players");
-        $db->update('ID = ' . $oldID, [
-            "ID" => $this->ID,
-            "Name" => $this->Name,
-            "Price" => $this->Price,
-            "productType" => $this->productType,
-            "productAttribute" => $this->productAttribute
+        $db->update('ID = ' . $this->ID, [
+            "BID_WINNER" => $this->BID_WINNER,
+            "BID_VALUE" => $this->BID_VALUE,
+            "BID_START_DATE" => $this->BID_START_DATE,
         ]);
 
         return true;
@@ -59,9 +57,9 @@ class Players
         return (new Database('players'))->select()->fetchAll(PDO::FETCH_CLASS, static::class);
     }
 
-    public static function getPlayer($ID)
+    public static function getPlayer($NBA_ID)
     {
-        return (new Database("players"))->select("ID = $ID")->fetchObject(static::class);
+        return (new Database("players"))->select("NBA_ID = $NBA_ID")->fetchObject(static::class);
     }
 
     public function getPosition(){
