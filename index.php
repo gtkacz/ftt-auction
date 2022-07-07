@@ -10,7 +10,7 @@ $allPlayers = Players::getPlayers();
 $results = "";
 
 foreach ($allPlayers as $row) {
-    if($row->PLAYER_TYPE != 'SIGNED'){
+    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != ''){
         $end_date_raw = $row->BID_START_DATE;
         $end_date_raw = date('Y-m-d h:i:s', strtotime($end_date_raw. ' + 1 days'));
         $end_date = str_replace(" ", "T", $end_date_raw);

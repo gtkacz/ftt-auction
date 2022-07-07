@@ -10,7 +10,7 @@ $allPlayers = Players::getPlayers();
 $results = "";
 
 foreach ($allPlayers as $row) {
-    if($row->BID_VALUE == ''){
+    if($row->BID_VALUE == '' && $row->PLAYER_TYPE != 'SIGNED'){
         $results .= '<option value="' . $row->NBA_ID . '">' . $row->NAME . '</option>';
     }
 }

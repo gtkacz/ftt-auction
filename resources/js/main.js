@@ -65,4 +65,9 @@ function update_image() {
     var player_id = document.getElementById("player_name").value;
     var img_src = 'https://cdn.nba.com/headshots/nba/latest/1040x760/' + player_id + '.png';
     document.getElementById("preview").src = img_src;
+    var image = document.getElementById('preview');
+    image.onerror = function() {
+        // alert('error loading ' + this.src);
+        this.src = 'https://raw.githubusercontent.com/gtkacz/nba-headshot-api/main/img/unknown-1.png';
+    };
 }
