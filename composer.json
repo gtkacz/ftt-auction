@@ -1,0 +1,17 @@
+{
+    "name": "gabriel/library",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files":[
+        ]
+    },
+    "authors": [
+        {
+            "name": "Gabriel Tkacz",
+            "email": "gmtkacz@protonmail.com"
+        }
+    ],
+    "require": {}
+}

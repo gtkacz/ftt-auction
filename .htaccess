@@ -1,0 +1,11 @@
+Options +FollowSymLinks +MultiViews
+RewriteEngine On
+RewriteBase /ftt/
+
+RewriteRule ^resources/views/(.+)\.php$ $1 [L,NC,R=307]
+
+RewriteCond %{DOCUMENT_ROOT}/ftt/resources/views/$1.php -f
+RewriteRule ^(.+?)/?$ resources/views/$1.php [END]
+
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
