@@ -29,6 +29,10 @@ body {
     justify-content: space-evenly;
 }
 
+.title-nav {
+    padding: 0.5rem !important;
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -250,6 +254,15 @@ img:hover {
     min-width: 80ch;
     right: 0;
     margin-right: 18ch;
+}
+
+.div-leilao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    min-width: 100ch;
 }
 
 .bg-dark {

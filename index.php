@@ -16,8 +16,8 @@ array_multisort(array_column($allProducts, 'SKU'), SORT_ASC, SORT_NATURAL | SORT
 $results = "";
 
 foreach ($allProducts as $row) {
-    $results .= '<div class="card hover-overlay hover-zoom hover-shadow ripple">
-						<input type="checkbox" onchange="check_active()" class="delete-checkbox" name="delete[]" value=' . $row->getSlug("SKU") . '&' . $row->productType . ' id="delete-checkbox">
+    $results .= '<div class="div-leilao">
+                    <div class="card hover-overlay hover-zoom hover-shadow ripple">
 						<a href="resources/views/edit-product?SKU=' . $row->getSlug("SKU") . '&type=' . $row->productType . '">
 							<span class="edit-content">+</span>
                         </a>
@@ -25,7 +25,18 @@ foreach ($allProducts as $row) {
 						<span>' . $row->Name . '</span>
 						<span>' . $row->Price . ' $</span>
 						<span>' . $row->attributeString() . '</span>
-					</div>';
+					</div>
+                    <script language="JavaScript">
+                        TargetDate = "2023-07-07T06:04:00";
+                        ForeColor = "black";
+                        CountActive = true;
+                        CountStepper = -1;
+                        LeadingZero = true;
+                        DisplayFormat = "%%H%% h %%M%% min %%S%% s";
+                        FinishMessage = "Leilão encerrado.";
+                    </script>
+                    <script language="JavaScript" src="https://rhashemian.github.io/js/countdown.js"></script>
+                </div>';
 }
 ?>
 <body>

@@ -13,10 +13,10 @@ $partial = '
 <script type="text/javascript" src="resources/js/main.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scandiweb Junior Developer Test Task</title>
+<title>Fantasy Trash Talk</title>
 </head>
 
-<nav class="navbar bg-dark">
+<nav class="navbar bg-dark title-nav">
 <div class="site-title-container">
     <img src="resources/images/logo.png" style="height: 5ch; cursor: default; margin: 0.25ch;">
     <h1 class="site-title">Fantasy Trash Talk</h1>
