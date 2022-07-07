@@ -258,6 +258,7 @@ img:hover {
 
 .div-preview img {
     height: 20ch;
+    cursor: default !important;
 }
 
 .div-leilao {

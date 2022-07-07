@@ -30,15 +30,6 @@ foreach ($allPlayers as $row) {
 
         <hr>
         <div class=preview>
-            <!-- <div class="div-preview">
-                <span>Live preview:</span>
-                <div class="card-preview">
-                    <span id="skuupdate">SKU</span>
-                    <span id="nameupdate">Name</span>
-                    <span id="priceupdate">Price</span>
-                    <span id="attrupdate">Attribute</span>
-                </div>
-            </div> -->
         <div class="div-preview">
             <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $row->NBA_ID . '.png' ?>" alt="">
         </div>
@@ -48,6 +39,7 @@ foreach ($allPlayers as $row) {
                 <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
                     <?= $results ?>
                 </select><br>
+                <a id="player_stats" target="_blank" href="<?= 'https://www.nba.com/stats/player/' . $row->NBA_ID?>">Estatísticas</a>
             </div>
             <div class="form-item">
                 <label for="Price">Escolha seu bid inicial:</label>
