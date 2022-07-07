@@ -262,8 +262,13 @@ img:hover {
     align-items: center;
     align-content: center;
     justify-content: center;
-    min-width: 100ch;
+    min-width: 120ch;
 }
+
+
+/* .div-leilao>* {
+    margin: 1em 0;
+} */
 
 .bg-dark {
     background-color: var(--main) !important;

@@ -3,31 +3,25 @@ require_once("vendor/autoload.php");
 
 include("resources/views/partials/head.php");
 
-use App\models\Book;
-use App\models\DVD;
-use App\models\Furniture;
+use App\models\Players;
 
-$allDVD = DVD::getProducts();
-$allBook = Book::getProducts();
-$allFurniture = Furniture::getProducts();
-$allProducts = array_merge($allDVD, $allBook, $allFurniture);
-array_multisort(array_column($allProducts, 'SKU'), SORT_ASC, SORT_NATURAL | SORT_FLAG_CASE, $allProducts);
+$allProducts = Players::getPlayers();
 
 $results = "";
 
 foreach ($allProducts as $row) {
     $results .= '<div class="div-leilao">
                     <div class="card hover-overlay hover-zoom hover-shadow ripple">
-						<a href="resources/views/edit-product?SKU=' . $row->getSlug("SKU") . '&type=' . $row->productType . '">
+						<a href="resources/views/edit-product?ID=' . $row->getSlug("ID") . '">
 							<span class="edit-content">+</span>
                         </a>
-						<span>' . $row->SKU . '</span>
-						<span>' . $row->Name . '</span>
-						<span>' . $row->Price . ' $</span>
-						<span>' . $row->attributeString() . '</span>
+						<span>' . $row->NAME . '</span>
+						<span>' . $row->getPosition() . '</span>
+						<span>$ ' . number_format($row->BID_VALUE) . '</span>
+						<span> Maior bid: ' . $row->BID_WINNER . '</span>
 					</div>
                     <script language="JavaScript">
-                        TargetDate = "2023-07-07T06:04:00";
+                        TargetDate = "2023-07-07T06:13:00";
                         ForeColor = "black";
                         CountActive = true;
                         CountStepper = -1;

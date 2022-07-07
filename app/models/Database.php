@@ -10,7 +10,7 @@ class Database
     const HOST = "localhost";
     const USER = "root";
     const PASSWORD = "";
-    const DB_NAME = "product_list";
+    const DB_NAME = "ftt";
 
     private $table;
     private $connection;
