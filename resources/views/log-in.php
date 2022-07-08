@@ -10,6 +10,10 @@ if (isset($_GET["error"])){
     echo '<script>alert("Senha incorreta.")</script>';
 }
 
+if (isset($_GET["index"])){
+    echo '<script>alert("Você deve estar logado para utilizar o site.")</script>';
+}
+
 $allUsers = User::getUsers();
 $results = "";
 

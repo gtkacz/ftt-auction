@@ -5,6 +5,10 @@ include("resources/views/partials/head.php");
 
 use App\models\Players;
 
+if (!isset($_SESSION["username"])){
+    header('location: log-in?index=true');
+}
+
 $allPlayers = Players::getPlayers();
 
 $results = "";
