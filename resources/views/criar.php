@@ -11,8 +11,8 @@ if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POS
     $bid_millions = $_POST["bid_value"] * 1000000;
 
     if (isset($_GET["edit"])){
-        $check1 = $create_bid->BID_VALUE != $bid_millions;
-        $check2 = $create_bid->BID_YEARS != $_POST["bid_years"];
+        $check1 = $create_bid->BID_VALUE < $bid_millions;
+        $check2 = $create_bid->BID_YEARS < (int)$_POST["bid_years"];
         if(!($check1 || $check2)){
             header('location: edit-bid?error=true&ID=' . $_POST["player_name"]);
             exit;

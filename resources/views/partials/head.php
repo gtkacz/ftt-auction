@@ -40,7 +40,7 @@
     else{
         ?>
         <div class="site-title-container">
-            <span style="color:white;" class="btn">Bem vindo, <span style="color:#FF9000; cursor:pointer;"><?= $_SESSION['username'] ?></span></span>
+        <button type="button" style="background-color:transparent; color:white;" class="btn" onclick="window.location.href='resources/views/player?ID=<?=$_SESSION['username'] ?>'">Bem vindo, <span style="color:#FF9000; cursor:pointer;"><?= $_SESSION['username'] ?></span></button>
             <?php
             if ($_SESSION["commissioner"] == 1){?>
                 <button type="button" style="background-color:transparent; color:#FF9000;" class="btn" onclick="window.location.href='resources/views/admin'">Comissão</button>
