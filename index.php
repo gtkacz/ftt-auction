@@ -17,23 +17,23 @@ foreach ($allPlayers as $row) {
         
         $results .= '<div class="div-leilao">
         <div class="card hover-overlay hover-zoom hover-shadow ripple">
-        <a href="resources/views/edit-product?ID=' . $row->getSlug("ID") . '">
-        <span class="edit-content">+</span>
-        </a>
-        <b>' . $row->NAME . '</b>
-        <span>' . $row->getPosition() . '</span>
-        <em>$ ' . number_format($row->BID_VALUE) . '</em>
-        <em>' . $row->BID_YEARS . ' anos</em>
-        <em> Maior bid: ' . $row->BID_WINNER . '</em>
+            <a href="resources/views/edit-product?ID=' . $row->getSlug("ID") . '">
+            <span class="edit-content">+</span>
+            </a>
+            <b>' . $row->NAME . '</b>
+            <span>' . $row->getPosition() . '</span>
+            <em>$ ' . number_format($row->BID_VALUE) . '</em>
+            <em>' . $row->BID_YEARS . ' anos</em>
+            <em> Maior bid: ' . $row->BID_WINNER . '</em>
         </div>
         <script language="JavaScript">
-        TargetDate = "'. $end_date . '";
-        ForeColor = "black";
-        CountActive = true;
-        CountStepper = -1;
-        LeadingZero = true;
-        DisplayFormat = "%%H%% h %%M%% min %%S%% s";
-        FinishMessage = "Leilão encerrado.";
+            TargetDate = "2022-07-07T13:26:20";
+            ForeColor = "black";
+            CountActive = true;
+            CountStepper = -1;
+            LeadingZero = true;
+            DisplayFormat = "%%H%% h %%M%% min %%S%% s";
+            FinishMessage = "Leilão encerrado.";
         </script>
         <script language="JavaScript" src="https://rhashemian.github.io/js/countdown.js"></script>
         </div>';

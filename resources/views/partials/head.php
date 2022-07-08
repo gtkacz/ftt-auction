@@ -1,5 +1,6 @@
-<?php
-$partial = '
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -21,12 +22,6 @@ $partial = '
     <img src="resources/images/logo.png" style="height: 5ch; cursor: default; margin: 0.25ch;">
     <h1 class="site-title">Fantasy Trash Talk</h1>
     </div>
-    <span style="color:white;">Bem vindo, <span style="color:#FF9000;">admin</span></span>
+    <!-- <span style="color:white;">Bem vindo, <span style="color:#FF9000;">admin</span></span> -->
+    <button type="button" style="background-color:transparent; border:none; color:#FF9000;" onclick="window.location.href='resources/views/sign-up'">Login</button>
 </nav>
-'
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<?= $partial ?>

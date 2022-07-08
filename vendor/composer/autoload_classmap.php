@@ -6,10 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\models\\Book' => $baseDir . '/app/models/Book.php',
-    'App\\models\\DVD' => $baseDir . '/app/models/DVD.php',
-    'App\\models\\Database' => $baseDir . '/app/models/Database.php',
-    'App\\models\\Furniture' => $baseDir . '/app/models/Furniture.php',
-    'App\\models\\Product' => $baseDir . '/app/models/Product.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

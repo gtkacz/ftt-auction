@@ -59,7 +59,10 @@ foreach ($allPlayers as $row) {
                         oninput="validity.valid||(value='');" step="1" id="price" name="bid_years"
                         placeholder="Dê seu bid inicial"
                         oninvalid="this.setCustomValidity('Please, submit required data')"
-                        oninput="this.setCustomValidity('')" required><span> anos</span></div><br>
+                        oninput="this.setCustomValidity('')" required><span> anos</span>
+                        <input type="checkbox" name="team_option">
+                        </div>
+                        <br>
             </div>
         </div>
         </div>
