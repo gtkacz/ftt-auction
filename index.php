@@ -21,7 +21,9 @@ foreach ($allPlayers as $row) {
     $now = new DateTime();
     
     if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != ''){
-        if($date_obj > $now) {
+        if($date_obj < $now) {
+            $row->bid_over($row->NBA_ID);
+        } else {
             $results .= '<div class="div-leilao">
             <div class="card hover-overlay hover-zoom hover-shadow ripple">
                 <a href="resources/views/edit-bid?ID=' . $row->getSlug("NBA_ID") . '">

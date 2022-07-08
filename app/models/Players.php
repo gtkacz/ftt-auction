@@ -70,4 +70,13 @@ class Players
             return $this->POSITION1;
         }
     }
+
+    public function bid_over($NBA_ID){
+        $db = new Database("players");
+        $db->update('ID = ' . $this->ID, [
+            "PLAYER_TYPE" => "SIGNED"
+        ]);
+
+        return true;
+    }
 }
