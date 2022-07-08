@@ -16,7 +16,8 @@ if (isset($_POST["username"], $_POST["password"])) {
 
     if (password_verify($_POST["password"], $user->PASSWORD)) {
         session_start();
-        $_SESSION["user"] = $user;
+        $_SESSION["username"] = $user->USERNAME;
+        $_SESSION["userteam"] = $user->TEAMNAME;
         header('location: index');
         exit;
     } else {

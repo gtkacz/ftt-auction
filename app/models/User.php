@@ -29,4 +29,9 @@ class User
     {
         return (new Database("users"))->select("USERNAME = $USERNAME")->fetchObject(static::class);
     }
+
+    public static function getUsers($order = "'ID'")
+    {
+        return (new Database('users'))->select()->fetchAll(PDO::FETCH_CLASS, static::class);
+    }
 }

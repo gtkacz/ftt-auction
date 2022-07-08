@@ -23,8 +23,24 @@
         <h1 class="site-title">Fantasy Trash Talk</h1>
     </div>
     <!-- <span style="color:white;">Bem vindo, <span style="color:#FF9000;">admin</span></span> -->
-    <div class="site-title-container">
-        <button type="button" style="background-color:transparent; color:#FF9000;" class="btn" onclick="window.location.href='resources/views/sign-up'">Signup</button>
-        <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-in'">Login</button>
-    </div>
+    <?php
+    session_start();
+
+    if (!isset($_SESSION["username"])){
+        echo <<<LOGSIGN
+        <div class="site-title-container">
+            <button type="button" style="background-color:transparent; color:#FF9000;" class="btn" onclick="window.location.href='resources/views/sign-up'">Signup</button>
+            <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-in'">Login</button>
+        </div>
+        LOGSIGN;
+    }
+    else{
+        echo <<<LOGSIGN
+        <div class="site-title-container">
+            <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-out.inc'">Logout</button>
+        </div>
+        LOGSIGN;
+    }
+    ?>
+    
 </nav>
