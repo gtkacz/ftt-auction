@@ -24,10 +24,10 @@ foreach ($allPlayers as $row) {
         if($date_obj < $now) {
             $row->bid_over();
         } else {
-            $interval = $now->diff($date_obj);
+            $interval = $date_obj->diff($now);
             $results .= '<div class="div-leilao">
             <div class="card hover-overlay hover-zoom hover-shadow ripple">
-                <a href="resources/views/edit-bid?ID=' . $row->getSlug("NBA_ID") . '">
+                <a href="resources/views/edit-bid?ID=' . $row->NBA_ID . '">
                 <span title="Bidar esse jogador" class="edit-content">+</span>
                 </a>
                 <b>' . $row->NAME . '</b>
