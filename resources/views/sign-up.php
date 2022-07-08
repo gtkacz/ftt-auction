@@ -26,7 +26,7 @@ include("partials/head.php");
                 <input type="password" pattern="[a-zA-Z0-9!@#$%^*_|]{5,25}" maxlength="30" id="password" name="password" placeholder="Escolha sua senha" oninvalid="this.setCustomValidity('Senha inválida.')" oninput="this.setCustomValidity('')" required><br>
 
                 <label for="teamname">Nome do time</label>
-                <input pattern="[a-zA-Z0-9!@#$%^*_|]{6,35}" type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" required><br>
+                <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" required><br>
             </div>
         </div>
     </form>
