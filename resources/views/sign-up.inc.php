@@ -14,6 +14,6 @@ if (isset($_POST["username"], $_POST["password"], $_POST["teamname"])) {
     $newUser->TEAMNAME = $_POST["teamname"];
 
     $newUser->create();
+    header('location: index?success=true');
 }
-header('location: index');
 exit;

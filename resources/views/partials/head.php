@@ -18,10 +18,13 @@
 </head>
 
 <nav class="navbar bg-dark title-nav">
-<div class="site-title-container">
-    <img src="resources/images/logo.png" style="height: 5ch; cursor: default; margin: 0.25ch;">
-    <h1 class="site-title">Fantasy Trash Talk</h1>
+    <div class="site-title-container">
+        <img src="resources/images/logo.png" style="height: 5ch; cursor: default; margin: 0.25ch;">
+        <h1 class="site-title">Fantasy Trash Talk</h1>
     </div>
     <!-- <span style="color:white;">Bem vindo, <span style="color:#FF9000;">admin</span></span> -->
-    <button type="button" style="background-color:transparent; border:none; color:#FF9000;" onclick="window.location.href='resources/views/sign-up'">Login</button>
+    <div class="site-title-container">
+        <button type="button" style="background-color:transparent; color:#FF9000;" class="btn" onclick="window.location.href='resources/views/sign-up'">Signup</button>
+        <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-in'">Login</button>
+    </div>
 </nav>

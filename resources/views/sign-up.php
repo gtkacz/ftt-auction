@@ -3,7 +3,6 @@
 require_once("../../vendor/autoload.php");
 
 include("partials/head.php");
-
 ?>
 <body>
 <div class="container">
