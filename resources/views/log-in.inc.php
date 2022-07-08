@@ -17,7 +17,7 @@ if (isset($_POST["username"], $_POST["password"])) {
     if (password_verify($_POST["password"], $user->PASSWORD)) {
         session_start();
         $_SESSION["username"] = $user->USERNAME;
-        $_SESSION["userteam"] = $user->TEAMNAME;
+        $_SESSION["userteam"] = $user->getSlug($user->TEAMNAME);
         $_SESSION["commissioner"] = $user->IS_COMMISSIONER;
         header('location: index');
         exit;

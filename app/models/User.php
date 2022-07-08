@@ -34,4 +34,8 @@ class User
     {
         return (new Database('users'))->select()->fetchAll(PDO::FETCH_CLASS, static::class);
     }
+
+    public function getSlug($string){
+        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
+    }
 }

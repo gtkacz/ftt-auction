@@ -5,12 +5,17 @@ require_once("../../vendor/autoload.php");
 include("partials/head.php");
 
 use App\models\Players;
+use App\models\User;
 
 if (!isset($_SESSION["username"])){
     header('location: log-in?index=true');
 }
 
 $allPlayers = Players::getPlayers();
+$className = "App\\models\\User";
+$username = $_SESSION["username"];
+$username = "'$username'";
+$user = call_user_func([$className, 'getUser'], $username);
 
 $results = "";
 
@@ -21,7 +26,7 @@ foreach ($allPlayers as $row) {
     $date_obj = new DateTime($end_date_raw);
     $now = new DateTime();
     
-    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != '' && $row->BID_WINNER == $_GET["ID"]){
+    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != '' && $user->getSlug($row->BID_WINNER) == $_GET["ID"]){
         if($date_obj < $now) {
             $row->bid_over();
         } else {
