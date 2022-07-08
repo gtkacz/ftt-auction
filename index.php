@@ -36,7 +36,11 @@ foreach ($allPlayers as $row) {
                 <em>' . $row->BID_YEARS . ' ano(s)</em>
                 <em> Maior bid: ' . $row->BID_WINNER . '</em>
             </div>
-            <span>' . $interval->format('%h h %i min %s s') . '</span>
+            <p>
+                <span name="ticking_h" id="ticking_h">' . $interval->format('%h') . '</span><span>h </span
+                <span name="ticking_m" id="ticking_m">' . $interval->format('%i') . '</span><span>min </span
+                <span name="ticking_s" id="ticking_s">' . $interval->format('%s') . '</span><span>s </span
+            </p>
             </div>
             ';
         }
