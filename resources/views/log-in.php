@@ -14,6 +14,10 @@ if (isset($_GET["index"])){
     echo '<script>alert("Você deve estar logado para utilizar o site.")</script>';
 }
 
+if (isset($_GET["success"])){
+    echo '<script>alert("Usuário criado com suecesso.")</script>';
+}
+
 $allUsers = User::getUsers();
 $results = "";
 

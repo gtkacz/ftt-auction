@@ -13,10 +13,6 @@ $allPlayers = Players::getPlayers();
 
 $results = "";
 
-if (isset($_GET["success"])){
-    echo '<script>alert("Usuário criado com suecesso.")</script>';
-}
-
 foreach ($allPlayers as $row) {
     if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != ''){
         $end_date_raw = $row->BID_START_DATE;
