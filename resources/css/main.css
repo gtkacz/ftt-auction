@@ -389,6 +389,7 @@ img:hover {
 .logo {
     margin-right: 0.25em;
     height: 2ch;
+    cursor: pointer !important;
 }
 
 .texto-bandeira {

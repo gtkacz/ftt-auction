@@ -28,7 +28,7 @@ foreach ($allUsers as $row) {
 ?>
 <body>
 <div class="container">
-    <form method="post" action="log-in.inc" autocomplete="off" id="login_form">
+    <form method="post" action="log-in.inc" id="login_form">
         <div class="title">
             <h2>Fazer login</h2>
             <div>

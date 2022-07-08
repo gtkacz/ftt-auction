@@ -11,7 +11,7 @@ include("partials/head.php");
             <h2>Criar uma conta</h2>
             <div>
                 <button type="submit" class="btn btn-success btn-size">Criar</button>
-                <button type="button" class="btn btn-danger btn-size" onclick="window.location.href='index'">Cancelar</button>
+                <button type="button" class="btn btn-danger btn-size" onclick="window.location.href='admin'">Cancelar</button>
             </div>
         </div>
 
