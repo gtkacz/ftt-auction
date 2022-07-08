@@ -14,7 +14,6 @@ foreach ($allPlayers as $row) {
         $results .= '<option value="' . $row->NBA_ID . '">' . $row->NAME . '</option>';
     }
 }
-
 ?>
 <body>
 <div class="container">

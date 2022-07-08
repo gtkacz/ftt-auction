@@ -21,11 +21,11 @@
 
 <?php session_start(); ?>
 
-<nav class="navbar bg-dark title-nav" style="padding: 1.5ch !important;">
+<nav class="navbar bg-dark title-nav" style="padding: 1.5ch !important; align-content:center; align-items:center; justify-items:center;">
     <div class="site-title-container">
         <img src="resources/images/logo.png" style="height: 5ch; cursor: default;">
         <h1 class="site-title">Fantasy Trash Talk</h1>
-        <button type="button" style="background-color:transparent; color:white;" class="btn" onclick="window.location.href='resources/views/history'">Leilões encerrados</button>
+        <!-- <button type="button" style="background-color:transparent; color:white; margin-left: 3ch;" class="btn" onclick="window.location.href='resources/views/history'">Leilões encerrados</button> -->
     </div>
 
     <?php

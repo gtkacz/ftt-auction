@@ -16,8 +16,8 @@ body {
 .site-title {
     color: var(--sec_org) !important;
     font-size: 3ch !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    /* margin-top: 0 !important;
+    margin-bottom: 0 !important; */
     margin-left: 1ch !important;
 }
 
@@ -27,6 +27,11 @@ body {
     justify-items: center;
     align-content: center;
     justify-content: space-evenly;
+}
+
+.site-title-container h1 {
+    margin-bottom: 0 !important;
+    font-weight: 600 !important;
 }
 
 .title-nav {
@@ -269,6 +274,7 @@ img:hover {
     align-content: center;
     justify-content: center;
     min-width: 25ch;
+    max-width: 27ch;
     margin: 5ch;
 }
 

@@ -7,8 +7,17 @@ use App\models\Players;
 if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POST["bid_years"])) {
     $className = "App\\models\\Players";
     $create_bid = call_user_func([$className, 'getPlayer'], $_POST["player_name"]);
-
+    
     $bid_millions = $_POST["bid_value"] * 1000000;
+
+    if (isset($_GET["edit"])){
+        $check1 = $create_bid->BID_VALUE != $bid_millions;
+        $check2 = $create_bid->BID_YEARS != $_POST["bid_years"];
+        if(!($check1 || $check2)){
+            header('location: edit-bid?error=true&ID=' . $_POST["player_name"]);
+            exit;
+        }
+    }
 
     $create_bid->BID_WINNER = $_POST["user_team"];
     $create_bid->BID_VALUE = $bid_millions;

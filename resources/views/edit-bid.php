@@ -16,10 +16,14 @@ if (isset($_GET["ID"])) {
     header('location: index');
     exit;
 }
+
+if (isset($_GET["error"])){
+    echo '<script>alert("Bid inválido.")</script>';
+}
 ?>
 <body>
 <div class="container">
-    <form method="post" action="criar" autocomplete="off" id="player_form">
+    <form method="post" action="criar?edit=true" autocomplete="off" id="player_form">
         <div class="title">
             <h2>Bidar <b><?= $player->NAME ?></b></h2>
             <div>
