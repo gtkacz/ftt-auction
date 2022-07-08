@@ -17,12 +17,11 @@
 <title>Fantasy Trash Talk</title>
 </head>
 
-<nav class="navbar bg-dark title-nav">
+<nav class="navbar bg-dark title-nav" style="padding: 1.5ch !important;">
     <div class="site-title-container">
-        <img src="resources/images/logo.png" style="height: 5ch; cursor: default; margin: 0.25ch;">
+        <img src="resources/images/logo.png" style="height: 5ch; cursor: default;">
         <h1 class="site-title">Fantasy Trash Talk</h1>
     </div>
-    <!-- <span style="color:white;">Bem vindo, <span style="color:#FF9000;">admin</span></span> -->
     <?php
     session_start();
 
@@ -35,11 +34,12 @@
         LOGSIGN;
     }
     else{
-        echo <<<LOGSIGN
+        ?>
         <div class="site-title-container">
+            <span style="color:white;" class="btn">Bem vindo, <span style="color:#FF9000;"><?= $_SESSION['username'] ?></span></span>
             <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-out.inc'">Logout</button>
         </div>
-        LOGSIGN;
+        <?php
     }
     ?>
     

@@ -20,13 +20,13 @@ include("partials/head.php");
         <div class="form">
             <div class="form-item">
                 <label for="username">Nome de usuário</label>
-                <input type="text" maxlength="30" id="username" name="username" placeholder="Escolha seu nome de usuário" oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')" required><br>
+                <input type="text" maxlength="30" id="username" name="username" placeholder="Escolha seu nome de usuário" oninvalid="this.setCustomValidity('Por favor escolha seu nome de usuário.')" oninput="this.setCustomValidity('')" required><br>
                 
                 <label for="password">Senha</label>
-                <input type="password" maxlength="30" id="password" name="password" placeholder="Escolha sua senha" oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')" required><br>
+                <input type="password" maxlength="30" id="password" name="password" placeholder="Escolha sua senha" oninvalid="this.setCustomValidity('Por favor escolha sua senha.')" oninput="this.setCustomValidity('')" required><br>
 
                 <label for="teamname">Nome do time</label>
-                <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')" required><br>
+                <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Por favor escolha o nome do seu time.')" oninput="this.setCustomValidity('')" required><br>
             </div>
         </div>
     </form>
