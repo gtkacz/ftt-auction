@@ -19,7 +19,7 @@ if (isset($_GET["ID"])) {
 ?>
 <body>
 <div class="container">
-    <form method="post" action="edit-bid.inc" autocomplete="off" id="player_form">
+    <form method="post" action="criar" autocomplete="off" id="player_form">
         <div class="title">
             <h2>Bidar <b><?= $player->NAME ?></b></h2>
             <div>
@@ -36,6 +36,7 @@ if (isset($_GET["ID"])) {
         </div>
         <div class="form">
             <input type="hidden" value="<?= $_SESSION["userteam"] ?>" name="user_team">
+            <input type="hidden" value="<?= $player->NBA_ID ?>" name="player_name">
             <div class="form-item">
                 <label for="Price"><h4>Dê seu bid:</h4></label>
                 <div>
