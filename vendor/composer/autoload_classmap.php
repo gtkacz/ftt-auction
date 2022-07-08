@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\models\\Database' => $baseDir . '/app/models/Database.php',
+    'App\\models\\Players' => $baseDir . '/app/models/Players.php',
+    'App\\models\\User' => $baseDir . '/app/models/User.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

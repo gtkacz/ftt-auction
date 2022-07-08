@@ -1,7 +1,8 @@
 <?php
-require_once("vendor/autoload.php");
 
-include("resources/views/partials/head.php");
+require_once("../../vendor/autoload.php");
+
+include("partials/head.php");
 
 use App\models\Players;
 
@@ -20,7 +21,7 @@ foreach ($allPlayers as $row) {
     $date_obj = new DateTime($end_date_raw);
     $now = new DateTime();
     
-    if($row->PLAYER_TYPE == 'SIGNED' && $row->BID_VALUE != ''){
+    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != '' && $row->BID_WINNER == $_GET["ID"]){
         if($date_obj < $now) {
             $row->bid_over();
         } else {
@@ -51,7 +52,7 @@ foreach ($allPlayers as $row) {
 <div class="container">
     <form method="post" action="resources/views/delete">
         <div class="title">
-            <h2>Leilões ativos</h2>
+            <h2>Meus leilões</h2>
             <div>
                 <button type="button" class="btn btn-success btn-size" onclick="window.location.href='resources/views/criar-leilao'">
                     Criar leilão
@@ -69,7 +70,7 @@ foreach ($allPlayers as $row) {
         </div>
     </form>
 </div>
-<?php include("resources/views/partials/footer.php"); ?>
+<?php include("partials/footer.php"); ?>
 
 <!-- <script>
     var countDownDate = new Date("' . $end_date . '").getTime();
