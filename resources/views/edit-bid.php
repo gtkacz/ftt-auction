@@ -32,7 +32,7 @@ if (isset($_GET["ID"])) {
         <hr>
         <div class=preview>
         <div class="div-preview">
-            <img src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="">
+            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
         </div>
         <div class="form">
             <input type="hidden" value="<?= $_SESSION["userteam"] ?>" name="user_team">
@@ -58,7 +58,9 @@ if (isset($_GET["ID"])) {
                     </div>
                     <div>
                     <span>TO</span>
-                    <input type="checkbox" name="team_option" id="team_option">
+                    <input type="checkbox" name="team_option" id="team_option"
+                    <?php if($player->HAS_TO){echo "checked";} ?>
+                    >
                     </div>
                     <br>
             </div>

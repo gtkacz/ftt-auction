@@ -17,7 +17,7 @@ if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POS
         $create_bid->has_to(1);
     }
     else{
-        $create_bid->has_to("NULL");
+        $create_bid->has_to(NULL);
     }
 
     $create_bid->edit();

@@ -19,14 +19,16 @@
 <title>Fantasy Trash Talk</title>
 </head>
 
+<?php session_start(); ?>
+
 <nav class="navbar bg-dark title-nav" style="padding: 1.5ch !important;">
     <div class="site-title-container">
         <img src="resources/images/logo.png" style="height: 5ch; cursor: default;">
         <h1 class="site-title">Fantasy Trash Talk</h1>
+        <button type="button" style="background-color:transparent; color:white;" class="btn" onclick="window.location.href='resources/views/history'">Leilões encerrados</button>
     </div>
-    <?php
-    session_start();
 
+    <?php
     if (!isset($_SESSION["username"])){
         echo <<<LOGSIGN
         <div class="site-title-container">

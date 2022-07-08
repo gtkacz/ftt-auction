@@ -31,7 +31,7 @@ foreach ($allPlayers as $row) {
         <hr>
         <div class=preview>
         <div class="div-preview">
-            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $row->NBA_ID . '.png' ?>" alt="">
+            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $row->NBA_ID . '.png' ?>" alt="" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';">
         </div>
         <div class="form">
             <input type="hidden" value="<?= $_SESSION["userteam"] ?>" name="user_team">
