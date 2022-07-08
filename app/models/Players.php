@@ -71,7 +71,7 @@ class Players
         }
     }
 
-    public function bid_over($NBA_ID){
+    public function bid_over(){
         $db = new Database("players");
         $db->update('ID = ' . $this->ID, [
             "PLAYER_TYPE" => "SIGNED"
