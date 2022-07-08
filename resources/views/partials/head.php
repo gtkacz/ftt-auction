@@ -37,6 +37,12 @@
         ?>
         <div class="site-title-container">
             <span style="color:white;" class="btn">Bem vindo, <span style="color:#FF9000; cursor:pointer;"><?= $_SESSION['username'] ?></span></span>
+            <?php
+            if ($_SESSION["commissioner"] == 1){?>
+                <button type="button" style="background-color:transparent; color:#FF9000;" class="btn" onclick="window.location.href='resources/views/admin'">Comissão</button>
+            <?php
+            }
+            ?>
             <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-out.inc'">Logout</button>
         </div>
         <?php

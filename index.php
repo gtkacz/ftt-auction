@@ -21,7 +21,7 @@ foreach ($allPlayers as $row) {
         
         $results .= '<div class="div-leilao">
         <div class="card hover-overlay hover-zoom hover-shadow ripple">
-            <a href="resources/views/edit-product?ID=' . $row->getSlug("ID") . '">
+            <a href="resources/views/edit-bid?ID=' . $row->getSlug("NBA_ID") . '">
             <span class="edit-content">+</span>
             </a>
             <b>' . $row->NAME . '</b>

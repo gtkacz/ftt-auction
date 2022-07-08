@@ -18,6 +18,7 @@ if (isset($_POST["username"], $_POST["password"])) {
         session_start();
         $_SESSION["username"] = $user->USERNAME;
         $_SESSION["userteam"] = $user->TEAMNAME;
+        $_SESSION["commissioner"] = $user->IS_COMMISSIONER;
         header('location: index');
         exit;
     } else {

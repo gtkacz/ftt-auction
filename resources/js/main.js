@@ -24,10 +24,11 @@ $(function() {
 });
 
 function update() {
-    var update_text = document.getElementById("bid_form").value;
+    var update_text = document.getElementById("bid_years").value;
 
-    document.getElementById("bid_form").value = update_text.toLocaleString();
-
+    if (Number(update_text) > 2) {
+        document.getElementById("team_option").checked = false;
+    }
 }
 
 function check_active() {

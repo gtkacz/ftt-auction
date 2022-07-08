@@ -47,7 +47,7 @@ foreach ($allPlayers as $row) {
 
                 <div>
                 <!-- <span>$</span> -->
-                <input type="number" min="3.5" max="30" value="3.5"
+                <input id="bid_form" type="number" min="3.5" max="30" value="3.5"
                         oninput="validity.valid||(value='');" step="0.5" id="price" name="bid_value"
                         placeholder="Dê seu bid inicial"
                         oninvalid="this.setCustomValidity('Please, submit required data')"
@@ -55,14 +55,18 @@ foreach ($allPlayers as $row) {
                 </div>
                 <div>
                 <!-- <span>por</span> -->
-                <input id="bid_form" type="number" onChange="update();" min="1" max="3" value="1"
+                <input id="bid_years" type="number" onChange="update();" min="1" max="3" value="1"
                         oninput="validity.valid||(value='');" step="1" id="price" name="bid_years"
                         placeholder="Dê seu bid inicial"
                         oninvalid="this.setCustomValidity('Please, submit required data')"
-                        oninput="this.setCustomValidity('')" required><span> anos</span>
-                        <input type="checkbox" name="team_option">
-                        </div>
-                        <br>
+                        oninput="this.setCustomValidity('')" required>
+                        <span> anos</span>
+                    </div>
+                    <div>
+                    <span>TO</span>
+                    <input type="checkbox" name="team_option" id="team_option">
+                    </div>
+                    <br>
             </div>
         </div>
         </div>
