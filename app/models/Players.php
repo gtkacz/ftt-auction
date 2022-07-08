@@ -45,14 +45,6 @@ class Players
         return (new Database('players'))->delete("ID = '{$this->ID}'");
     }
 
-    public function getSlug($attribute)
-    {
-        $slug = $this->$attribute;
-        $slug = preg_replace('/\s+/', '+', $slug);
-
-        return $slug;
-    }
-
     public static function getPlayers($order = "'ID'")
     {
         return (new Database('players'))->select()->fetchAll(PDO::FETCH_CLASS, static::class);
@@ -88,5 +80,9 @@ class Players
         ]);
 
         return true;
+    }
+
+    public function getSlug($string){
+        return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
     }
 }
