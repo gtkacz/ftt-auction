@@ -48,7 +48,7 @@ else{
     foreach ($allPlayers as $row) {
         if ($row->PLAYER_TYPE != "SIGNED"){
             $result .= '<tr>
-                            <td class="texto-bandeira"><a href="/ftt/edit?user=true&username=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
+                            <td class="texto-bandeira"><a href="/ftt/edit?player=true&playername=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
                             <td>' . $row->POSITION1 . '</td>
                             <td>' . $row->POSITION2 . '</td>
                             <td>' . $row->PLAYER_TYPE . '</td>
@@ -57,7 +57,7 @@ else{
                         </tr>';}
         else{
             $result .= '<tr>
-                            <td class="texto-bandeira"><a href="/ftt/edit?user=true&username=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
+                            <td class="texto-bandeira"><a href="/ftt/edit?player=true&playername=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
                             <td>' . $row->POSITION1 . '</td>
                             <td>' . $row->POSITION2 . '</td>
                             <td>' . $row->PLAYER_TYPE . '</td>

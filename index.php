@@ -34,7 +34,7 @@ foreach ($allPlayers as $row) {
                 <span>' . $row->getPosition() . '</span>
                 <em>$ ' . number_format($row->BID_VALUE) . '</em>
                 <em>' . $row->BID_YEARS . ' ano(s)</em>
-                <em> Maior bid: ' . $row->BID_WINNER . '</em>
+                <em>' . $row->BID_WINNER . '</em>
             </div>
             <p>
                 <span name="ticking_h" id="ticking_h">' . $interval->format('%h') . '</span><span>h </span

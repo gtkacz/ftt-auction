@@ -9,6 +9,7 @@ class User
     public $USERNAME;
     public $PASSWORD;
     public $TEAMNAME;
+    public $TEAMSLUG;
     public $CAP;
     public $SLOTS;
 
@@ -19,7 +20,8 @@ class User
         $db->insert([
             "USERNAME" => $this->USERNAME,
             "PASSWORD" => $hashed_password,
-            "TEAMNAME" => $this->TEAMNAME
+            "TEAMNAME" => $this->TEAMNAME,
+            "TEAMSLUG" => $this->TEAMSLUG
         ]);
 
         return true;
