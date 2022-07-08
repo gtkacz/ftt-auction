@@ -26,7 +26,7 @@ foreach ($allPlayers as $row) {
     $date_obj = new DateTime($end_date_raw);
     $now = new DateTime();
     
-    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != '' && $user->getSlug($row->BID_WINNER) == $_GET["ID"]){
+    if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != '' && $user->getSlug($row->BID_WINNER) == $user->getSlug($_GET["ID"])){
         if($date_obj < $now) {
             $row->bid_over();
         } else {
@@ -40,7 +40,7 @@ foreach ($allPlayers as $row) {
                 <span>' . $row->getPosition() . '</span>
                 <em>$ ' . number_format($row->BID_VALUE) . '</em>
                 <em>' . $row->BID_YEARS . ' ano(s)</em>
-                <em> Maior bid: ' . $row->BID_WINNER . '</em>
+                <em>' . $row->BID_WINNER . '</em>
             </div>
             <p>
                 <span name="ticking_h" id="ticking_h">' . $interval->format('%h') . '</span><span>h </span

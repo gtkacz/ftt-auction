@@ -33,7 +33,7 @@ foreach ($allPlayers as $row) {
             <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $row->NBA_ID . '.png' ?>" alt="" onerror="this.onerror=null;this.src='https://placeimg.com/200/300/animals';">
         </div>
         <div class="form">
-            <input type="hidden" value="<?= $_SESSION["userteam"] ?>" name="user_team">
+            <input type="hidden" value="<?= $_SESSION["username"] ?>" name="user_team">
             <div class="form-item">
                 <label for="player_name">Selecione o jogador que você quer bidar:</label>
                 <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
