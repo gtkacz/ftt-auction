@@ -16,7 +16,7 @@ $results = "";
 foreach ($allPlayers as $row) {
     if($row->PLAYER_TYPE != 'SIGNED' && $row->BID_VALUE != ''){
         $end_date_raw = $row->BID_START_DATE;
-        $end_date_raw = date('Y-m-d h:i:s', strtotime($end_date_raw. ' + 1 days'));
+        $end_date_raw = date('Y-m-d H:i:s', strtotime($end_date_raw. ' + 1 days'));
         $end_date = str_replace(" ", "T", $end_date_raw);
         
         $results .= '<div class="div-leilao">
@@ -31,7 +31,7 @@ foreach ($allPlayers as $row) {
             <em> Maior bid: ' . $row->BID_WINNER . '</em>
         </div>
         <script language="JavaScript">
-            TargetDate = "2022-07-07T13:26:20";
+            TargetDate = "' . $end_date . '";
             ForeColor = "black";
             CountActive = true;
             CountStepper = -1;

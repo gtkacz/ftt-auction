@@ -36,7 +36,7 @@
     else{
         ?>
         <div class="site-title-container">
-            <span style="color:white;" class="btn">Bem vindo, <span style="color:#FF9000;"><?= $_SESSION['username'] ?></span></span>
+            <span style="color:white;" class="btn">Bem vindo, <span style="color:#FF9000; cursor:pointer;"><?= $_SESSION['username'] ?></span></span>
             <button type="button" style="background-color:#FF9000;" class="btn" onclick="window.location.href='resources/views/log-out.inc'">Logout</button>
         </div>
         <?php
