@@ -13,6 +13,7 @@ class Players
     public $BID_VALUE;
     public $BID_DATE;
     public $BID_WINNER;
+    public $HAS_TO;
 
     public function create()
     {
@@ -75,6 +76,15 @@ class Players
         $db = new Database("players");
         $db->update('ID = ' . $this->ID, [
             "PLAYER_TYPE" => "SIGNED"
+        ]);
+
+        return true;
+    }
+
+    public function has_to($toggle){
+        $db = new Database("players");
+        $db->update('ID = ' . $this->ID, [
+            "HAS_TO" => $toggle
         ]);
 
         return true;

@@ -13,8 +13,14 @@ if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POS
     $create_bid->BID_WINNER = $_POST["user_team"];
     $create_bid->BID_VALUE = $bid_millions;
     $create_bid->BID_YEARS = $_POST["bid_years"];
+    if (isset($_POST["team_option"])){
+        $create_bid->has_to(1);
+    }
+    else{
+        $create_bid->has_to("NULL");
+    }
 
-    $create_bid->edit($oldSKU);
+    $create_bid->edit();
 }
 header('location: index');
 exit;
