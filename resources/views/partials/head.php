@@ -23,8 +23,8 @@
 
 <nav class="navbar bg-dark title-nav" style="padding: 1.5ch !important; align-content:center; align-items:center; justify-items:center;">
     <div class="site-title-container">
-        <img src="resources/images/logo.png" style="height: 5ch; cursor: default;">
-        <h1 class="site-title">Fantasy Trash Talk</h1>
+        <a href='index'><img src="resources/images/logo.png" style="height: 5ch; cursor: pointer;"></a>
+        <h1 class="site-title"><a href='index' style="color: inherit; text-decoration: inherit;">Fantasy Trash Talk</a></h1>
         <!-- <button type="button" style="background-color:transparent; color:white; margin-left: 3ch;" class="btn" onclick="window.location.href='resources/views/history'">Leilões encerrados</button> -->
     </div>
 
