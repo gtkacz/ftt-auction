@@ -39,7 +39,7 @@ if (isset($_GET["error"])){
             <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
         </div>
         <div class="form">
-            <input type="hidden" value="<?= $_SESSION["userteam"] ?>" name="user_team">
+            <input type="hidden" value="<?= $_SESSION["username"] ?>" name="user_team">
             <input type="hidden" value="<?= $player->NBA_ID ?>" name="player_name">
             <div class="form-item">
                 <label for="Price"><h4>Dê seu bid:</h4></label>

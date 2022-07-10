@@ -26,9 +26,6 @@ foreach ($allPlayers as $row) {
         if($date_obj < $now) {
             $row->bid_over();
         } else {
-            print_r($date_obj);
-            echo '<br>';
-            print_r($now);
             $interval = $date_obj->diff($now);
             $results .= '<div class="div-leilao">
             <div class="card hover-overlay hover-zoom hover-shadow ripple">

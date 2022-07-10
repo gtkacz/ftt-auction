@@ -82,6 +82,23 @@ class Players
         return true;
     }
 
+    public function set_time($type){
+        date_default_timezone_set("America/Sao_Paulo");
+        if ($type == 'early'){
+            $time = date('Y-m-d') . ' 08:00:00';
+        }
+        elseif ($type == 'late'){
+            $time = date('Y-m-d') . ' 22:00:00';
+        }
+
+        $db = new Database("players");
+        $db->update('ID = ' . $this->ID, [
+            "BID_START_DATE" => $time
+        ]);
+
+        return true;
+    }
+
     public function getSlug($string){
         return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
     }
