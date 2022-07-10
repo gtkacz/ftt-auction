@@ -30,7 +30,7 @@ if (!isset($_GET["players"])){
         $result .= '<tr>
                     <td class="texto-bandeira"><a href="/ftt/edit?user=true&username=' . $row->getSlug($row->USERNAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->USERNAME . '</td>
                     <td>' . $row->TEAMNAME . '</td>
-                    <td>' . number_format($row->CAP) . '</td>
+                    <td>$ ' . number_format($row->CAP) . '</td>
                     <td>' . number_format($row->SLOTS) . '</td>
                     <td>' . number_format($row->IS_COMMISSIONER) . '</td>
                 </tr>';

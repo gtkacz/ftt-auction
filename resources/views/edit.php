@@ -29,10 +29,10 @@ include("partials/head.php");
         <div class="form">
             <div class="form-item">
                 <label for="username">Nome de usuário</label>
-                <input type="text" pattern="[a-zA-Z0-9!@#$%^*_|]{4,20}" maxlength="30" id="username" name="username" placeholder="Escolha seu nome de usuário" oninvalid="this.setCustomValidity('Nome de usuário inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->USERNAME ?>" required><br>
+                <input type="text" maxlength="30" id="username" name="username" placeholder="Escolha seu nome de usuário" oninvalid="this.setCustomValidity('Nome de usuário inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->USERNAME ?>" required><br>
 
                 <label for="teamname">Nome do time</label>
-                <input pattern="[a-zA-Z0-9!@#$%^*_|]{6,35}" type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->TEAMNAME ?>" required><br>
+                <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->TEAMNAME ?>" required><br>
                 
                 <label for="teamname">Cap (milhões)</label>
                 <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" required><br>

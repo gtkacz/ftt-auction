@@ -13,6 +13,8 @@ $allPlayers = Players::getPlayers();
 
 $results = "";
 
+date_default_timezone_set("America/Sao_Paulo");
+
 foreach ($allPlayers as $row) {
     $end_date_init = $row->BID_START_DATE;
     $end_date_raw = date('Y-m-d H:i:s', strtotime($end_date_init. ' + 1 days'));
@@ -24,6 +26,9 @@ foreach ($allPlayers as $row) {
         if($date_obj < $now) {
             $row->bid_over();
         } else {
+            print_r($date_obj);
+            echo '<br>';
+            print_r($now);
             $interval = $date_obj->diff($now);
             $results .= '<div class="div-leilao">
             <div class="card hover-overlay hover-zoom hover-shadow ripple">

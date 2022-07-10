@@ -390,11 +390,14 @@ img:hover {
     margin-right: 0.25em;
     height: 2ch;
     cursor: pointer !important;
+    filter: invert(34%) sepia(52%) saturate(5037%) hue-rotate(200deg) brightness(103%) contrast(107%);
 }
 
 .texto-bandeira {
     display: flex;
     align-items: center;
+    align-content: center;
+    justify-items: center;
     justify-content: center;
     text-decoration: none;
 }
