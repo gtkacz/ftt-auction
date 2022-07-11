@@ -5,6 +5,7 @@ require_once("../../vendor/autoload.php");
 include("partials/head.php");
 
 use App\models\Players;
+use App\models\User;
 
 $allPlayers = Players::getPlayers();
 $results = "";
@@ -14,6 +15,12 @@ foreach ($allPlayers as $row) {
         $results .= '<option value="' . $row->NBA_ID . '">' . $row->NAME . '</option>';
     }
 }
+
+$className2 = "App\\models\\User";
+$username = $_SESSION["username"];
+$username = "'$username'";
+$user = call_user_func([$className2, 'getUser'], $username);
+
 ?>
 <body>
 <div class="container">
@@ -43,7 +50,7 @@ foreach ($allPlayers as $row) {
             </div>
             <div class="form-item">
                 <label for="Price">Dê seu bid inicial:</label>
-
+                <small>* Você tem $ <?= number_format($user->CAP) ?> de cap e <?= number_format($user->SLOTS) ?> slot(s)</small>
                 <div>
                 <!-- <span>$</span> -->
                 <input id="bid_form" type="number" min="3.5" max="30" value="3.5"
