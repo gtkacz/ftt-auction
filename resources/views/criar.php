@@ -31,7 +31,7 @@ if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POS
 
     date_default_timezone_set("America/Sao_Paulo");
     $now = (int) date('H');
-    if ($now < 21){
+    if ($now < 8){
         $create_bid->set_time('early');
     }
     elseif ($now > 21){
@@ -40,5 +40,5 @@ if (isset($_POST["user_team"], $_POST["player_name"], $_POST["bid_value"], $_POS
 
     $create_bid->edit();
 }
-// header('location: index');
-// exit;
+header('location: index');
+exit;

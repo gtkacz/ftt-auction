@@ -35,7 +35,7 @@ include("partials/head.php");
                 <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->TEAMNAME ?>" required><br>
                 
                 <label for="teamname">Cap (milhões)</label>
-                <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" required><br>
+                <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" step=0.5 required><br>
                 
                 <label for="teamname">Slots</label>
                 <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->SLOTS ?>" required><br>
