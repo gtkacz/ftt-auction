@@ -28,7 +28,7 @@ if (!isset($_GET["players"])){
                 <th><span class="a-titulo">É comissário</span></th>';
     foreach ($allUsers as $row) {
         $result .= '<tr>
-                    <td class="texto-bandeira"><a href="/ftt/edit?user=true&username=' . $row->getSlug($row->USERNAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->USERNAME . '</td>
+                    <td class="texto-bandeira"><a href="/ftt/edit?type=user&username=' . $row->getSlug($row->USERNAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->USERNAME . '</td>
                     <td>' . $row->TEAMNAME . '</td>
                     <td>$ ' . number_format($row->CAP) . '</td>
                     <td>' . number_format($row->SLOTS) . '</td>
@@ -48,7 +48,7 @@ else{
     foreach ($allPlayers as $row) {
         if ($row->PLAYER_TYPE != "SIGNED"){
             $result .= '<tr>
-                            <td class="texto-bandeira"><a href="/ftt/edit?player=true&playername=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
+                            <td class="texto-bandeira"><a href="/ftt/edit?type=player&playerid=' . $row->NBA_ID . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
                             <td>' . $row->POSITION1 . '</td>
                             <td>' . $row->POSITION2 . '</td>
                             <td>' . $row->PLAYER_TYPE . '</td>
@@ -57,7 +57,7 @@ else{
                         </tr>';}
         else{
             $result .= '<tr>
-                            <td class="texto-bandeira"><a href="/ftt/edit?player=true&playername=' . $row->getSlug($row->NAME) . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
+                            <td class="texto-bandeira"><a href="/ftt/edit?type=player&playerid=' . $row->NBA_ID . '" class="a"><img src="resources/images/edit_black_24dp.svg" class="logo"/>' . $row->NAME . '</td>
                             <td>' . $row->POSITION1 . '</td>
                             <td>' . $row->POSITION2 . '</td>
                             <td>' . $row->PLAYER_TYPE . '</td>
