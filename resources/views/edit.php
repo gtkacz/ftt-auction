@@ -65,7 +65,7 @@ if($_GET["type"] == 'player'){
             <h2>Editar o jogador <b><?= $player->NAME ?></b></h2>
             <div>
                 <button type="submit" class="btn btn-success btn-size">Editar</button>
-                <button type="button" class="btn btn-danger btn-size" onclick="window.location.href='admin'">Cancelar</button>
+                <button type="button" class="btn btn-danger btn-size" onclick="window.location.href='admin?players=true'">Cancelar</button>
             </div>
         </div>
 
@@ -85,6 +85,7 @@ if($_GET["type"] == 'player'){
 
                 <label for="userslots">Posição 2</label>
                 <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
+                    <option <?php if ($player->POSITION2 == "NULL"){echo "selected";} ?> value="NULL">NULL</option>
                     <option <?php if ($player->POSITION2 == "G"){echo "selected";} ?> value="G">G</option>
                     <option <?php if ($player->POSITION2 == "F"){echo "selected";} ?> value="F">F</option>
                     <option <?php if ($player->POSITION2 == "C"){echo "selected";} ?> value="C">C</option>
