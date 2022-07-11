@@ -7,6 +7,11 @@ use App\models\Players;
 
 if (!isset($_SESSION["username"])){
     header('location: log-in?index=true');
+    exit;
+}
+
+if (isset($_GET["error"])){
+    echo '<script>alert("Você não tem cap ou slots suficientes para bidar um jogador.")</script>';
 }
 
 $allPlayers = Players::getPlayers();

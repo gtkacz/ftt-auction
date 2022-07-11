@@ -21,6 +21,11 @@ $username = $_SESSION["username"];
 $username = "'$username'";
 $user = call_user_func([$className2, 'getUser'], $username);
 
+if($user->SLOTS == 0 || $user->CAP < 3500000){
+    header('location: index?error=true');
+    exit;
+}
+
 ?>
 <body>
 <div class="container">
@@ -49,8 +54,8 @@ $user = call_user_func([$className2, 'getUser'], $username);
                 <a id="player_stats" target="_blank" href="<?= 'https://www.nba.com/stats/player/' . $row->NBA_ID?>"><small>Estatísticas</small></a><br>
             </div>
             <div class="form-item">
-                <label for="Price">Dê seu bid inicial:</label>
                 <small>* Você tem $ <?= number_format($user->CAP) ?> de cap e <?= number_format($user->SLOTS) ?> slot(s)</small>
+                <label for="Price">Dê seu bid inicial:</label>
                 <div>
                 <!-- <span>$</span> -->
                 <input id="bid_form" type="number" min="3.5" max="30" value="3.5"
