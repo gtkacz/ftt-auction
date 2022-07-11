@@ -71,28 +71,37 @@ if($_GET["type"] == 'player'){
 
         <hr>
 
+        <div class=preview>
+        <div class="div-preview">
+            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
+        </div>
+        
         <div class="form">
             <div class="form-item">
                 <label for="username">Nome do jogador</label>
                 <input type="text" maxlength="30" id="username" name="username" placeholder="Escolha seu nome de usuário" oninvalid="this.setCustomValidity('Nome de usuário inválido.')" oninput="this.setCustomValidity('')" value="<?= $player->NAME ?>" required><br>
 
                 <label for="userslots">Posição 1</label>
-                <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
+                <select id="player_name" name="player_name" class="div-toggle">
                     <option <?php if ($player->POSITION1 == "G"){echo "selected";} ?> value="G">G</option>
                     <option <?php if ($player->POSITION1 == "F"){echo "selected";} ?> value="F">F</option>
                     <option <?php if ($player->POSITION1 == "C"){echo "selected";} ?> value="C">C</option>
-                </select>
+                </select><br>
 
                 <label for="userslots">Posição 2</label>
-                <select id="player_name" name="player_name" class="div-toggle" onChange="update_image()">
+                <select id="player_name" name="player_name" class="div-toggle">
                     <option <?php if ($player->POSITION2 == "NULL"){echo "selected";} ?> value="NULL">NULL</option>
                     <option <?php if ($player->POSITION2 == "G"){echo "selected";} ?> value="G">G</option>
                     <option <?php if ($player->POSITION2 == "F"){echo "selected";} ?> value="F">F</option>
                     <option <?php if ($player->POSITION2 == "C"){echo "selected";} ?> value="C">C</option>
-                </select>
+                </select><br>
 
-                <label for="userslots">Slots</label>
-                <input type="number" min=0 max=15 id="userslots" name="userslots" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $player->PLAYER_TYPE ?>" required><br>
+                <label for="userslots">Tipo</label>
+                <select id="player_name" name="player_name" class="div-toggle">
+                    <option <?php if ($player->PLAYER_TYPE == "UFA"){echo "selected";} ?> value="UFA">UFA</option>
+                    <option <?php if ($player->PLAYER_TYPE == "RFA"){echo "selected";} ?> value="RFA">RFA</option>
+                    <option <?php if ($player->PLAYER_TYPE == "SIGNED"){echo "selected";} ?> value="SIGNED">SIGNED</option>
+                </select>
             </div>
         </div>
     </form>
