@@ -7,15 +7,14 @@ def main():
     
     for index, row in df.iterrows():
         resultado = input(f'{row["NAME"]}: ')
+        
         if resultado == 'y':
             id_list.append(str(row['NBA_ID']))
-            
-        if index == 2:
-            break
         
     ids = ', '.join(id_list)
     ids = f'({ids})'
     query = f'UPDATE players SET PLAYER_TYPE = "SIGNED" WHERE NBA_ID IN {ids}'
+    
     with open("query.txt", "w") as file:
         file.write(query)
 
