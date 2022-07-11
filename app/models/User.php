@@ -12,6 +12,7 @@ class User
     public $TEAMSLUG;
     public $CAP;
     public $SLOTS;
+    public $IS_COMMISSIONER;
 
     public function create()
     {
@@ -22,6 +23,21 @@ class User
             "PASSWORD" => $hashed_password,
             "TEAMNAME" => $this->TEAMNAME,
             "TEAMSLUG" => $this->TEAMSLUG
+        ]);
+
+        return true;
+    }
+
+    public function edit_user()
+    {
+        $db = new Database("users");
+        $db->update('ID = ' . $this->ID, [
+            "USERNAME" => $this->USERNAME,
+            "TEAMNAME" => $this->TEAMNAME,
+            "TEAMSLUG" => $this->TEAMSLUG,
+            "CAP" => $this->CAP,
+            "SLOTS" => $this->SLOTS,
+            "IS_COMMISSIONER" => $this->IS_COMMISSIONER
         ]);
 
         return true;

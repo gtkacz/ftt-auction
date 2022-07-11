@@ -15,7 +15,7 @@ include("partials/head.php");
 ?>
 <body>
 <div class="container">
-    <form method="post" action="edit.inc?user=true" autocomplete="off" id="signup_form">
+    <form method="post" action="edit.inc?user=true" autocomplete="off" id="edit_form">
         <div class="title">
             <h2>Editar o usuário <b><?= $user->USERNAME ?></b></h2>
             <div>
@@ -34,14 +34,14 @@ include("partials/head.php");
                 <label for="teamname">Nome do time</label>
                 <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->TEAMNAME ?>" required><br>
                 
-                <label for="teamname">Cap (milhões)</label>
-                <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" step=0.5 required><br>
+                <label for="usercap">Cap (milhões)</label>
+                <input type="number" id="usercap" name="usercap" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" step=0.5 required><br>
                 
-                <label for="teamname">Slots</label>
-                <input type="number"oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->SLOTS ?>" required><br>
+                <label for="userslots">Slots</label>
+                <input type="number" id="userslots" name="userslots" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->SLOTS ?>" required><br>
                 
-                <label for="teamname">É comissário</label>
-                <input type="checkbox" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" <?php if($user->IS_COMMISSIONER){echo "checked";} ?>><br>
+                <label for="usercms">É comissário</label>
+                <input type="checkbox" id="usercms" name="usercms" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" <?php if($user->IS_COMMISSIONER){echo "checked";} ?>><br>
             </div>
         </div>
     </form>
