@@ -27,6 +27,17 @@ class User
         return true;
     }
 
+    public function edit_bid()
+    {
+        $db = new Database("users");
+        $db->update('ID = ' . $this->ID, [
+            "CAP" => $this->CAP,
+            "SLOTS" => $this->SLOTS
+        ]);
+
+        return true;
+    }
+
     public static function getUser($USERNAME)
     {
         return (new Database("users"))->select("USERNAME = $USERNAME")->fetchObject(static::class);

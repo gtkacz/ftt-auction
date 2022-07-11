@@ -50,7 +50,7 @@ foreach ($allPlayers as $row) {
 }
 
 if(empty($results)){
-    $results = "<h4>Nenhum leilão ativo.</h4>";
+    $results = "<em><h4>Nenhum leilão ativo.</h4></em>";
 }
 
 ?>
