@@ -47,7 +47,7 @@ if($user->SLOTS < 1 || $user->CAP < $player->BID_VALUE){
         <hr>
         <div class=preview>
         <div class="div-preview">
-            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
+            <img onerror="update_image()" id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
         </div>
         <div class="form">
             <input type="hidden" value="<?= $_SESSION["username"] ?>" name="user_team">
@@ -83,4 +83,5 @@ if($user->SLOTS < 1 || $user->CAP < $player->BID_VALUE){
         </div>
     </form>
 </div>
+<script>window.onload = update_image();</script>
 <?php include("partials/footer.php"); ?>

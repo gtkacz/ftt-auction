@@ -73,7 +73,7 @@ if($_GET["type"] == 'player'){
 
         <div class=preview>
         <div class="div-preview">
-            <img id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
+            <img onerror="update_image()" id="preview" src="<?= 'https://cdn.nba.com/headshots/nba/latest/1040x760/' . $player->NBA_ID . '.png' ?>" alt="<?= $player->NAME  ?>" title="<?= $player->NAME  ?>">
         </div>
         
         <div class="form">
@@ -106,7 +106,6 @@ if($_GET["type"] == 'player'){
         </div>
     </form>
 </div>
-
 <?php } ?>
 
 <?php include("partials/footer.php"); ?>
