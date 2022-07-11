@@ -35,10 +35,10 @@ include("partials/head.php");
                 <input type="text" maxlength="30" id="teamname" name="teamname" placeholder="Escolha o nome do seu time" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->TEAMNAME ?>" required><br>
                 
                 <label for="usercap">Cap (milhões)</label>
-                <input type="number" id="usercap" name="usercap" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" step=0.5 required><br>
+                <input type="number" min=0 max=130 id="usercap" name="usercap" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->CAP / 1000000 ?>" step=0.5 required><br>
                 
                 <label for="userslots">Slots</label>
-                <input type="number" id="userslots" name="userslots" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->SLOTS ?>" required><br>
+                <input type="number" min=0 max=15 id="userslots" name="userslots" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" value="<?= $user->SLOTS ?>" required><br>
                 
                 <label for="usercms">É comissário</label>
                 <input type="checkbox" id="usercms" name="usercms" oninvalid="this.setCustomValidity('Nome de time inválido.')" oninput="this.setCustomValidity('')" <?php if($user->IS_COMMISSIONER){echo "checked";} ?>><br>
