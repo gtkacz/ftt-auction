@@ -21,7 +21,7 @@ $username = $_SESSION["username"];
 $username = "'$username'";
 $user = call_user_func([$className2, 'getUser'], $username);
 
-if($user->SLOTS == 0 || $user->CAP < 3500000){
+if($user->SLOTS < 1 || $user->CAP < 3500000){
     header('location: index?error=true');
     exit;
 }

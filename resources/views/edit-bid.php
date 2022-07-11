@@ -5,6 +5,7 @@ require_once("../../vendor/autoload.php");
 include("partials/head.php");
 
 use App\models\Players;
+use App\models\User;
 
 $allPlayers = Players::getPlayers();
 
@@ -20,6 +21,16 @@ if (isset($_GET["ID"])) {
 if (isset($_GET["error"])){
     echo '<script>alert("Bid inválido.")</script>';
 }
+
+$className2 = "App\\models\\User";
+$username = $_SESSION["username"];
+$username = "'$username'";
+$user = call_user_func([$className2, 'getUser'], $username);
+if($user->SLOTS < 1 || $user->CAP < $player->BID_VALUE){
+    header('location: index?error=true');
+    exit;
+}
+
 ?>
 <body>
 <div class="container">
